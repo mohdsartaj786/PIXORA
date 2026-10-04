@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Compress images with PIXORA while maintaining the best possible quality.">
+    <meta name="theme-color" content="#080B14">
+    <title>Compress Image | PIXORA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/workspace.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container nav-container">
+        <a href="../index.html" class="brand">
+            <span class="brand-mark">PX</span>
+            <span class="brand-name">PIXORA</span>
+        </a>
+
+        <nav class="main-nav">
+            <a href="../index.html">Home</a>
+            <a href="../index.html#tools" class="active">Tools</a>
+            <a href="../index.html#features">Features</a>
+            <a href="../index.html#how-it-works">How It Works</a>
+            <a href="../pages/about.html">About</a>
+        </nav>
+
+        <div class="nav-actions">
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">◐</button>
+            <a href="../index.html#workspace" class="nav-cta">Get Started</a>
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu">☰</button>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="tool-hero">
+        <div class="container">
+            <span class="tool-badge">Image Compressor</span>
+            <h1>Compress Images. Keep Them Sharp.</h1>
+            <p>Reduce image file size with quality-first browser processing.</p>
+        </div>
+    </section>
+
+    <section class="compress-workspace">
+        <div class="container">
+            <div class="compress-card">
+
+                <div class="upload-area" id="uploadArea">
+                    <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp,image/gif" hidden>
+
+                    <div class="upload-content" id="uploadContent">
+                        <div class="upload-icon">↑</div>
+                        <h2>Drop your image here</h2>
+                        <p>or click to browse from your device</p>
+                        <span>JPG, PNG, WebP and GIF supported</span>
+                    </div>
+
+                    <div class="image-preview" id="imagePreview" style="display:none;">
+                        <img id="previewImage" src="" alt="Selected image preview">
+
+                        <div class="preview-info">
+                            <div>
+                                <strong id="fileName"></strong>
+                                <span id="fileSize"></span>
+                            </div>
+
+                            <button id="removeImage" type="button">Remove</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="image-details">
+                    <div class="detail-item">
+                        <span>Dimensions</span>
+                        <strong id="imageDimensions">—</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span>Format</span>
+                        <strong id="fileFormat">—</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span>Original Size</span>
+                        <strong id="originalSize">—</strong>
+                    </div>
+                </div>
+
+                <div class="compression-settings">
+                    <div class="section-heading">
+                        <div>
+                            <span class="small-label">Compression Level</span>
+                            <h2>Choose Your Quality</h2>
+                        </div>
+
+                        <span class="quality-value" id="qualityValue">80%</span>
+                    </div>
+
+                    <input type="range" id="qualityRange" min="10" max="100" value="80">
+
+                    <div class="range-labels">
+                        <span>Smaller File</span>
+                        <span>Better Quality</span>
+                    </div>
+                </div>
+
+                <div class="compression-actions">
+                    <button class="primary-btn" id="compressBtn" type="button">
+                        Compress Image
+                    </button>
+
+                    <button class="secondary-btn" id="resetBtn" type="button">
+                        Reset
+                    </button>
+                </div>
+
+                <div class="compression-result" id="compressionResult" style="display:none;">
+                    <div class="result-heading">
+                        <span class="small-label">Result</span>
+                        <h2>Your compressed image is ready</h2>
+                    </div>
+
+                    <div class="result-stats">
+                        <div class="result-stat">
+                            <span>Original Size</span>
+                            <strong id="resultOriginalSize">—</strong>
+                        </div>
+
+                        <div class="result-stat">
+                            <span>Compressed Size</span>
+                            <strong id="resultCompressedSize">—</strong>
+                        </div>
+
+                        <div class="result-stat">
+                            <span>Space Saved</span>
+                            <strong id="resultSaved">—</strong>
+                        </div>
+                    </div>
+
+                    <div class="result-preview">
+                        <img id="resultImage" src="" alt="Compressed image preview">
+                    </div>
+
+                    <a id="downloadBtn" class="primary-btn" href="#" download>
+                        Download Image
+                    </a>
+                </div>
+            </div>
+
+            <div class="quality-note">
+                <strong>Privacy-first processing</strong>
+                <p>Your image is processed directly in your browser. PIXORA does not need to upload your image to a server.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-content">
+        <div>
+            <a href="../index.html" class="brand">
+                <span class="brand-mark">PX</span>
+                <span class="brand-name">PIXORA</span>
+            </a>
+            <p>Powerful Image Tools. Better Quality.</p>
+        </div>
+
+        <div class="footer-links">
+            <a href="../pages/about.html">About</a>
+            <a href="../pages/features.html">Features</a>
+            <a href="../pages/privacy.html">Privacy</a>
+            <a href="../pages/terms.html">Terms</a>
+            <a href="../pages/contact.html">Contact</a>
+        </div>
+    </div>
+</footer>
+
+<script src="../js/ui/theme.js"></script>
+<script src="../js/ui/navigation.js"></script>
+<script src="../js/tools/compress.js"></script>
+
+</body>
+</html>
